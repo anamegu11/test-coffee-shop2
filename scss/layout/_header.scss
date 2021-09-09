@@ -1,0 +1,30 @@
+#header {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    .header-inner {
+        margin-right: 0;
+        padding: 20px 40px 0px 0px;
+    }
+    .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        .nav-item {
+            text-transform: uppercase;
+            padding-left: 30px;
+            &:first-child {
+                padding-left: 0;
+            }
+            a {
+                display: block;
+                color: cl(white);
+                font-weight: bold;
+                text-shadow: 1px 1px 2px #121212;
+                &:hover {
+                    color: cl(red);
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}

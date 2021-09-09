@@ -1,0 +1,78 @@
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.parallax-content {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    @include pc {
+        height: 300px;
+        margin-bottom: 90px;
+    }
+}
+.bg {
+    width: 100%;
+    height: 0;
+    /*
+    「background-attachment: fixed;」で背景を固定する
+    ※background-attachment: fixed;とbackground-size: cover;
+    を同時に使用した場合、iOSでは正しく動作しないためレスポンシブではパララックスは無し
+    */
+    padding-top: calc(1280 / 3840 * 100%) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: scroll;
+    @include pc {
+        height: 100%;
+        padding-top: 0;
+        background-attachment: fixed;
+    }
+}
+.bg-img01 {
+    background-image: url(../img/menu.jpg);
+}
+.bg-img02 {
+    background-image: url(../img/about.jpg);
+}
+.bg-img03 {
+    background-image: url(../img/location.jpg);
+}
+.section-title {
+    color: cl(white);
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .3));
+    @include pc {
+        font-size: 4.5rem;
+    }
+}
+.section-subtitle {
+    display: inline-block;
+    color: cl(black);
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-bottom: 6px solid cl(red);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    @include pc {
+        font-size: 2.5rem;
+        margin-bottom: 70px;
+    }
+}

@@ -1,0 +1,73 @@
+#menu {
+    margin-bottom: 115px;
+    .section-flex {
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 196px;
+            position: relative;
+            &::after {
+                content: '';
+                width: 1px;
+                height: calc(100% + 26px);
+                background-color: cl(text);
+                position: absolute;
+                top: 0;
+                left: 50%;
+            }
+        }
+    }
+    @mixin menu-content {
+        .praice-list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: cl(text);
+            &:not(:last-of-type) {
+                margin-bottom: 35px;
+            }
+            dt {
+                width: 90%;
+                border-bottom: dotted 1px cl(black);
+                text-align: left;
+                padding-right: 16px;
+                &:not(:last-of-type) {
+                    margin-bottom: 25px;
+                }
+            }
+            dd {
+                width: 10%;
+                text-align: right;
+                &:not(:last-of-type) {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+    .left-content {
+        @include menu-content ;
+        margin-bottom: 35px;
+        @include pc {
+            width: 50%;
+            padding-right: 45px;
+            margin-bottom: 0;
+        }
+    }
+    .right-content {
+        @include menu-content;
+        @include pc {
+            width: 50%;
+            padding-left: 45px;
+            margin-bottom: 0;
+        }
+        .praice-list {
+            @include pc {
+                &:first-of-type {
+                    margin-bottom: 70px;
+                }
+            }
+        }
+    }
+}
+

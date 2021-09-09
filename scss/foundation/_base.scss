@@ -1,0 +1,37 @@
+
+// COLORS
+// @include cl(black);
+//--------------------------------------------------
+
+$colors: (
+	white: #fff,
+	black: #000,
+	text: #383E45,
+    grey: #6E6E6E,
+    red: #E03131,
+);
+
+@function cl($key) {
+	@return map-get($colors, $key);
+}
+
+// FONT
+// @include Font;
+//--------------------------------------------------
+
+@mixin Font {
+	font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo ,sans-serif;
+}
+
+
+// RESPONSIVE
+// @include tab/sp/sp-min
+//--------------------------------------------------
+
+
+//mobileファースト(min-widthは〜以上)--------------------
+@mixin pc {
+	@media print,screen and (min-width: 768px) {
+		@content;
+	}
+}
